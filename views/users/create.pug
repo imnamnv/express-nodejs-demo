@@ -1,0 +1,10 @@
+extend ../layout/common
+block nav
+    include ../layout/nav.pug
+block content
+    h1 Create
+    form(action="/users/create",method="POST")
+        label Name 
+        input(type="text" name="name")
+
+        button Submit

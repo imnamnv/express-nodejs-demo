@@ -1,0 +1,10 @@
+extend ../layout/common
+block nav
+    include ../layout/nav.pug
+block content
+    ul
+        each val in user
+            li
+                span=val.name
+                span &nbsp
+                a(href="#") View
