@@ -7,21 +7,9 @@ module.exports.create =(req,res)=>{
 
 module.exports.createUser = (req,res)=>{
     req.body.id = shortID.generate();
-    var errors =[];
-    if(!req.body.name){
-        errors.push('Name is null');
-    }
-    if(!req.body.phone){
-        errors.push('Phone is null');
-    }
-    if(errors.length>0){
-        res.render('users/create',{
-            errors:errors,
-            values:req.body
-        });
-        return;
-    }
+    
     db.get('user').push(req.body).write();
+    console.log(res.locals.success);
     res.redirect('/users');
 };
 module.exports.listUser =(req,res)=>{
