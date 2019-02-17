@@ -11,10 +11,26 @@ module.exports.createUser = (req,res)=>{
     res.redirect('/users');
 };
 module.exports.listUser =(req,res)=>{
-    match = db.get('user').value();
+    var q = req.query.q;
+    var match = db.get('user').value().filter((user)=>{
+        return user.name.indexOf(q)!==-1;
+    });
+    if(q==null){
+        match = db.get('user').value();
+    }
     res.render('users/user.pug',{
-        user:match
+        user:match,
+        q : q
     })
+};
+module.exports.getUser =(req,res)=>{
+    var id = req.params.id;
+    console.log(id);
+    var user = db.get('user').find({id:id}).value();
+    console.log(user);
+    res.render('users/detail',{
+        user:user
+    });
 };
 
 

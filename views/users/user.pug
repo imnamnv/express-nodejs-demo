@@ -2,9 +2,12 @@ extend ../layout/common
 block nav
     include ../layout/nav.pug
 block content
+    form(method="GET",action="/users")
+        input(type="text",name="q",value=q)
+        button Search
     ul
         each val in user
             li
                 span=val.name
                 span &nbsp
-                a(href="#") View
+                a(href="/users/"+val.id) View
