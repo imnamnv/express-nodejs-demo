@@ -2,12 +2,22 @@ extend ../layout/common
 block nav
     include ../layout/nav.pug
 block content
-    form(method="GET",action="/users")
-        input(type="text",name="q",value=q)
-        button Search
-    ul
+    form.d-flex(method="GET",action="/users")
+        input.input-group.mr-5.w-75(type="text",name="q",value=q)
+        button.btn.btn-primary Search
+    a.btn.btn-primary(href="users/create") Create
+    ul.mt-5
+    table.table
+        tr
+            th Name
+            th Phone
+            th Action
         each val in user
-            li
-                span=val.name
-                span &nbsp
-                a(href="/users/"+val.id) View
+            tr
+                td=val.name
+                td=val.phone
+                td
+                    a(href="/users/"+val.id) View
+                   
+                        
+                        
