@@ -3,7 +3,9 @@
     {
       "name": "A",
       "phone": "123",
-      "id": "hVAFov28h"
+      "id": "hVAFov28h",
+      "email": "a",
+      "password": "1"
     },
     {
       "name": "B",
