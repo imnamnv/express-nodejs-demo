@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const userRouter = require('./routers/user.routers.js');
@@ -12,7 +13,7 @@ const db = low(adapters);
 const bodyParser = require('body-parser');
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-app.use(cookiesParser('namnv'));
+app.use(cookiesParser(process.env.SESSION_SECRET));
 
 app.get('/',(req,res)=>{
     res.send('Hello NodeJS');
