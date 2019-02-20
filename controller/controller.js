@@ -6,10 +6,8 @@ module.exports.create =(req,res)=>{
 };
 
 module.exports.createUser = (req,res)=>{
-    req.body.id = shortID.generate();
-    
+    req.body.id = shortID.generate(); 
     db.get('user').push(req.body).write();
-    console.log(res.locals.success);
     res.redirect('/users');
 };
 module.exports.listUser =(req,res)=>{
@@ -20,6 +18,7 @@ module.exports.listUser =(req,res)=>{
     if(q==null){
         match = db.get('user').value();
     }
+    var x = res.locals.user;
     res.render('users/user.pug',{
         user:match,
         q : q
@@ -27,9 +26,7 @@ module.exports.listUser =(req,res)=>{
 };
 module.exports.getUser =(req,res)=>{
     var id = req.params.id;
-    console.log(id);
     var user = db.get('user').find({id:id}).value();
-    console.log(user);
     res.render('users/detail',{
         user:user
     });

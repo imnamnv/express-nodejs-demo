@@ -10,3 +10,5 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
         a.nav-link(href='#') Features
       li.nav-item
         a.nav-link(href='#') Pricing
+  if(user)
+    p= user[0].name      

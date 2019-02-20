@@ -12,7 +12,7 @@ const db = low(adapters);
 const bodyParser = require('body-parser');
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-app.use(cookiesParser());
+app.use(cookiesParser('namnv'));
 
 app.get('/',(req,res)=>{
     res.send('Hello NodeJS');
