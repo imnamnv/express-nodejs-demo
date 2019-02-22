@@ -4,6 +4,7 @@ const app = express();
 const userRouter = require('./routers/user.routers.js');
 const authRouth = require('./routers/auth.routh');
 const loginAuth = require('./authendication/auth.middleware');
+const productRouter = require('./routers/product.routers');
 const cookiesParser = require('cookie-parser');
 
 const low =require('lowdb');
@@ -23,6 +24,7 @@ app.set('view engine', 'pug');
 app.set('views','views');
 
 app.use('/users',loginAuth.requireAuth,userRouter);
+app.use('/product',productRouter);
 app.use('/auth',authRouth);
 
 
