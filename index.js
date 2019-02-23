@@ -15,6 +15,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(cookiesParser(process.env.SESSION_SECRET));
+app.use(express.static('public'));
 
 app.get('/',(req,res)=>{
     res.send('Hello NodeJS');

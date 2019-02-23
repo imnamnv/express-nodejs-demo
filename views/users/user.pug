@@ -10,11 +10,14 @@ block content
     ul.mt-5
     table.table
         tr
+            th Avatar
             th Name
             th Phone
             th Action
         each val in user
             tr
+                td
+                    img(src=""+val.avatar,width="32")
                 td=val.name
                 td=val.phone
                 td
