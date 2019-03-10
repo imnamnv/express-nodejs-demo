@@ -2,7 +2,6 @@ extend ../layout/common
 block nav
     include ../layout/nav.pug
 block content
-    p #{user.name}
     form.d-flex(method="GET",action="/users")
         input.input-group.mr-5.w-75(type="text",name="q",value=q)
         button.btn.btn-primary Search

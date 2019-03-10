@@ -10,7 +10,7 @@ block content
                     .card-body
                         h5.card-title #{value.name}
                         p(style="overflow: auto;height:8rem").card-text #{value.description}
-                        a.btn.btn-primary(href='#') Go somewhere
+                        a.btn.btn-primary(href='/product/'+value.id) Go somewhere
     nav(aria-label='...')
         ul.pagination
             if page > 0

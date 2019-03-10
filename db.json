@@ -7,7 +7,9 @@
       "avatar": "uploads\\91ff7f7d918b1466a8ae01917db80a37"
     },
     {
-      "name": "A",
+      "name": "a",
+      "email": "a",
+      "password": "1",
       "phone": "123",
       "id": "M8kv87jit",
       "avatar": "uploads\\1ab9b86010c0c23b3b7c22e95e7fe1be"
@@ -193,6 +195,20 @@
       "image": "http://dummyimage.com/320x240.png/cc0000/ffffff",
       "name": "Malleefowl",
       "description": "ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "6oPQWI3qT"
+    },
+    {
+      "id": "2gTgJ61DT",
+      "cart": {
+        "0d6c157a-aaae-4596-9404-c0a3a3646a49": 7
+      }
+    },
+    {
+      "id": "MppfAShCx"
     }
   ]
 }

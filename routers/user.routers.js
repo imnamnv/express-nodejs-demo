@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controller/controller.js');
 const validate =require('../validate/user.validate');
-const loginAuth = require('../authendication/auth.middleware');
 var multer = require('multer');
 var upload = multer({dest:'./public/uploads/'});
 
